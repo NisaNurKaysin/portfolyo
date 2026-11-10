@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nisa Nur Kaysın · Portfolyo</title>
+<style>
+:root{--bg:#f7f6fb;--card:#fff;--text:#1d1b2e;--muted:#6a6783;--accent:#7c5cff;--accent2:#ff6fb1;--line:#e6e3f2;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12111c;--card:#1b1a2a;--text:#f1effa;--muted:#a09db8;--line:#2b2940;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#12111c;--card:#1b1a2a;--text:#f1effa;--muted:#a09db8;--line:#2b2940;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+.hero{padding:72px 0 56px;text-align:center;background:radial-gradient(600px 300px at 50% 0,rgba(124,92,255,.22),transparent)}
+.avatar{width:104px;height:104px;border-radius:50%;margin:0 auto 20px;display:grid;place-items:center;font-size:38px;font-weight:700;color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 10px 30px rgba(124,92,255,.35)}
+h1{font-size:clamp(2rem,6vw,3.2rem);margin:0 0 6px;letter-spacing:-.02em}
+.role{font-size:1.15rem;color:var(--muted);margin:0 auto 24px;max-width:560px}
+.grad{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius:999px;color:#fff;text-decoration:none;font-weight:600;transition:transform .2s,box-shadow .2s;box-shadow:0 6px 18px rgba(0,0,0,.15)}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(0,0,0,.22)}
+.btn svg{width:20px;height:20px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.wa{background:#25d366}.ml{background:linear-gradient(135deg,var(--accent),#5a8bff)}.ig{background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5)}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:18px;overflow-x:auto;padding:12px 20px}
+nav a{color:var(--muted);text-decoration:none;font-weight:600;font-size:.95rem;white-space:nowrap}
+nav a:hover{color:var(--accent)}
+section{padding:56px 0}
+h2{font-size:1.7rem;margin:0 0 24px}
+h2::after{content:"";display:block;width:48px;height:4px;border-radius:4px;margin-top:8px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(124,92,255,.15)}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.tl{border-left:2px solid var(--line);padding-left:22px;display:grid;gap:22px}
+.tl .card{position:relative}
+.tl .card::before{content:"";position:absolute;left:-31px;top:28px;width:14px;height:14px;border-radius:50%;background:var(--accent);border:3px solid var(--bg)}
+.card h3{margin:0 0 2px;font-size:1.1rem}
+.meta{color:var(--muted);font-size:.9rem;margin-bottom:10px}
+.card ul{margin:0;padding-left:18px;color:var(--muted)}
+.card li{margin:4px 0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{font-size:.8rem;padding:4px 11px;border-radius:999px;background:rgba(124,92,255,.12);color:var(--accent);font-weight:600}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s,transform .6s}
+.reveal.in{opacity:1;transform:none}
+.contact{text-align:center}
+.contact p{color:var(--muted);max-width:520px;margin:0 auto 24px}
+footer{text-align:center;color:var(--muted);padding:28px 0 40px;font-size:.9rem}
+.fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:9;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:#25d366;box-shadow:0 8px 22px rgba(37,211,102,.5)}
+.fab svg{width:28px;height:28px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+@media (prefers-reduced-motion:reduce){.reveal{transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/htm@3.1.1/dist/htm.umd.js"></script>
+<script>
+const { useEffect, useRef } = React;
+const html = htm.bind(React.createElement);
+
+// ✏️ Bilgileri buradan değiştir
+const INFO = {
+  name: "Nisa Nur Kaysın",
+  email: "nisakaysin@gmail.com",
+  phone: "905464318967",
+  instagram: "nisakaysin"
+};
+
+const experience = [
+  { role: "NOC ve İzleme Mühendisi Stajyeri", org: "Kartaca Bilişim", date: "Kasım 2025 – Mayıs 2026", points: [
+    "GCP üzerinde kurumsal veri hatlarını, bulut servislerini ve KPI’ları 7/24 izledim.",
+    "Grafana, Prometheus, GCP Alerting ve ServiceNow ile uyarıları önceliklendirdim; işleri Atlassian Jira Software’da yönettim.",
+    "BigQuery ve MSSQL ile SQL tabanlı doğrulama ve veri kalitesi kontrolleri yürüttüm.",
+    "Airflow, Crosser ve Kubernetes iş yüklerinde kök neden analizi yaptım."
+  ]},
+  { role: "DevOps Stajyeri", org: "Mono Bilişim", date: "Temmuz – Ağustos 2024", points: ["Docker dağıtımlarına, CI/CD iş akışlarına, izleme ve Linux yönetim görevlerine destek verdim."] },
+  { role: "Oyun Geliştirme Stajyeri", org: "Hero Games", date: "Temmuz – Ağustos 2023", points: ["Unity ve C# ile oyun mekaniği ve arayüz bileşenleri geliştirdim; test ve optimizasyona katıldım."] },
+  { role: "Etkinlik Operasyon Görevlisi", org: "Erbay İnsan Kaynakları", date: "2023 – 2025", points: ["Kurumsal etkinliklerde lojistik ve operasyonel koordinasyona destek verdim.", "Konuk katılım takibini Excel’de yönettim."] }
+];
+
+const projects = [
+  { t: "Yapay Zekâ Destekli Mülakat Simülatörü", d: "Konuşma tanıma ve yapay zekâ ile gerçekçi mülakat deneyimi sunan simülasyon.", s: ["Unity", "Python", "MSSQL", "OpenAI API", "NLP", "ElevenLabs"] },
+  { t: "Kornea Ülseri Tahmini", d: "Tıbbi görüntülerde CNN tabanlı sınıflandırma modeli.", s: ["TensorFlow", "Keras", "CNN"] },
+  { t: "Bitcoin Fiyat Tahmini", d: "Zaman serisi verisiyle LSTM tabanlı tahmin modeli.", s: ["Python", "Pandas", "LSTM"] },
+  { t: "Proteus ile Akıllı Ev Otomasyonu", d: "Sensör ve röle tabanlı akıllı ev sistemini Proteus ortamında tasarlayıp simüle ettim.", s: ["Proteus", "Embedded C", "Mikrodenetleyici", "Simülasyon"] },
+  { t: "E-Ticaret Web Sitesi", d: "Uçtan uca e-ticaret platformu.", s: ["ASP.NET MVC", "MSSQL"] }
+];
+
+const skills = ["Python", "SQL", "C", "C#", "Embedded C", "Pandas", "TensorFlow", "Keras", "CNN", "LSTM", "NLP", "OpenAI API", "Speech-to-Text", "BigQuery", "PostgreSQL", "MSSQL", "MariaDB", "ASP.NET MVC", "GCP", "Kubernetes", "Docker", "CI/CD", "Airflow", "Crosser", "Grafana", "Prometheus", "Looker", "DBeaver", "Linux", "Unity", "Proteus", "Atlassian Jira Software", "ServiceNow", "Excel"];
+const softSkills = ["Problem çözme", "Kök neden analizi", "Ekip çalışması", "İletişim", "Olay ve eskalasyon yönetimi", "Detaya önem verme", "Müşteri odaklılık", "Hızlı öğrenme", "Zaman yönetimi", "Sorumluluk alma"];
+
+const Icon = {
+  wa: html`<svg viewBox="0 0 24 24"><path d="M3 21l1.6-4.8A8.5 8.5 0 1 1 8 19.5L3 21z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.5-2-1-1 .7c-.8-.4-1.6-1.2-2-2l.7-1-1-2L9 8.5z"/></svg>`,
+  ml: html`<svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3.5 7l8.5 6 8.5-6"/></svg>`,
+  ig: html`<svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6"/></svg>`
+};
+
+function Buttons() {
+  const wa = `https://wa.me/${INFO.phone}?text=${encodeURIComponent("Merhaba Nisa, portfolyonu gördüm!")}`;
+  return html`<div class="btns">
+    <a class="btn wa" href=${wa} target="_blank" rel="noopener">${Icon.wa}WhatsApp</a>
+    <a class="btn ml" href=${"mailto:" + INFO.email}>${Icon.ml}E-posta</a>
+    ${INFO.instagram && html`<a class="btn ig" href=${"https://instagram.com/" + INFO.instagram} target="_blank" rel="noopener">${Icon.ig}Instagram</a>`}
+  </div>`;
+}
+
+function Reveal({ children, className = "" }) {
+  const ref = useRef(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!("IntersectionObserver" in window)) { el.classList.add("in"); return; }
+    const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { el.classList.add("in"); io.disconnect(); } }, { threshold: .12 });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+  return html`<div ref=${ref} class=${"reveal " + className}>${children}</div>`;
+}
+
+function App() {
+  return html`<div>
+    <header class="hero"><div class="wrap">
+      <div class="avatar">NK</div>
+      <h1>Merhaba, ben <span class="grad">${INFO.name}</span></h1>
+      <p class="role">Veri analizi ve veri odaklı teknolojilere ilgi duyan Bilgisayar Mühendisi. Öğrenmeyi, problem çözmeyi ve ekibe katkı sağlamayı seviyorum.</p>
+      <${Buttons} />
+    </div></header>
+
+    <nav><div class="wrap">
+      <a href="#deneyim">Deneyim</a><a href="#egitim">Eğitim</a><a href="#projeler">Projeler</a><a href="#beceriler">Beceriler</a><a href="#iletisim">İletişim</a>
+    </div></nav>
+
+    <main class="wrap">
+      <section id="deneyim"><h2>Deneyim</h2>
+        <div class="tl">${experience.map(x => html`<${Reveal} className="card" key=${x.role}>
+          <h3>${x.role}</h3><div class="meta">${x.org} · ${x.date}</div>
+          <ul>${x.points.map(p => html`<li key=${p}>${p}</li>`)}</ul>
+        <//>`)}</div>
+      </section>
+
+      <section id="egitim"><h2>Eğitim ve Sertifikalar</h2>
+        <div class="grid">
+          <${Reveal} className="card"><h3>Bilgisayar Mühendisliği (Lisans)</h3><div class="meta">İstanbul Sağlık ve Teknoloji Üniversitesi · 2021 – 2025</div><//>
+          <${Reveal} className="card"><h3>Sertifikalar</h3><ul><li>Google Cloud Digital Leader</li><li>Uluslararası İngiliz Kongresi Katılımcısı</li></ul><//>
+          <${Reveal} className="card"><h3>Diller</h3><ul><li>Türkçe: Ana dil</li><li>İngilizce: Profesyonel çalışma yeterliliği</li></ul><//>
+        </div>
+      </section>
+
+      <section id="projeler"><h2>Projeler</h2>
+        <div class="grid">${projects.map(p => html`<${Reveal} className="card" key=${p.t}>
+          <h3>${p.t}</h3><p class="meta">${p.d}</p>
+          <div class="chips">${p.s.map(s => html`<span class="chip" key=${s}>${s}</span>`)}</div>
+        <//>`)}</div>
+      </section>
+
+      <section id="beceriler"><h2>Beceriler</h2>
+        <${Reveal}><h3 style=${{ margin: "0 0 4px" }}>Teknik</h3><div class="chips">${skills.map(s => html`<span class="chip" key=${s}>${s}</span>`)}</div>
+        <h3 style=${{ margin: "28px 0 4px" }}>Kişisel yetkinlikler</h3><div class="chips">${softSkills.map(s => html`<span class="chip" key=${s}>${s}</span>`)}</div><//>
+      </section>
+
+      <section id="iletisim" class="contact"><h2 style=${{ display: "inline-block" }}>İletişim</h2>
+        <p>Bir proje, staj ya da iş fırsatı için bana ulaşabilirsin. Genelde aynı gün içinde dönüş yaparım.</p>
+        <${Buttons} />
+      </section>
+    </main>
+
+    <footer>© ${new Date().getFullYear()} ${INFO.name}</footer>
+    <a class="fab" aria-label="WhatsApp" href=${`https://wa.me/${INFO.phone}`} target="_blank" rel="noopener">${Icon.wa}</a>
+  </div>`;
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(html`<${App} />`);
+</script>
+</body>
+</html>
